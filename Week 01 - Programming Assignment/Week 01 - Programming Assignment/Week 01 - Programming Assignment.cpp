@@ -13,6 +13,8 @@ int main()
     string beverage;
 
     //My short & simple introduction
+    cout << "Welcome to my discussion!\n"
+    
     cout << "Hello, my name is Gary and my hobby is strength training & fitness development!\n";
     cout << "I would like to ask you three simple questions related to my hobby.\n\n";
 
