@@ -13,6 +13,7 @@ using namespace std;
 //The main function here
 int main()
 {
+    //The file stream variables
     ifstream inData;
     ofstream outData;
 
@@ -23,6 +24,9 @@ int main()
     string bodyPart;
     string beverage;
     double weight;
+
+    //Weird variable I made up for a "press to continue feature"
+    char um;
 
     //Friendly intro banner
     cout << setfill(' ');
@@ -186,7 +190,13 @@ int main()
 
     //Calculation for weight loss
     cout << "Analysis: If your current weight is " << weight << " lbs, then by the end of the month,\n"
-        << "you should hopefully weigh anywhere around " << weight - 8 << "-" << weight - 4 << "lbs!";
+        << "you should hopefully weigh anywhere around " << weight - 8 << "-" << weight - 4 << "lbs!"
+        << "\n\nEnter in any character to continue...\n\n";
+    cin >> um;
+
+    //To deal with input stream if it enters the fail state
+    cin.clear();
+    cin.ignore(100, '\n');
 
     //Stars because why not
     cout << "\n\n**********************************************************\n\n";
@@ -204,20 +214,20 @@ int main()
     cout << left;
     cout << setw(15) << setfill(' ') << "\n\n- Workout Period?" << setw(21) << right << setfill(' ') << workoutLength << " Hours";
     cout << setw(15) << setfill(' ') << "\n\n- Focal Point?" << setw(27) << right << setfill(' ') << "The " << bodyPart;
-    cout << setw(15) << setfill(' ') << "\n\n- Beverage?" << setw(27) << right << setfill(' ') << beverage;
-    cout << setw(15) << setfill(' ') << setprecision(1) << "\n\n- Current Weight?" << setw(20) << right << setfill(' ') << weight << " Pounds";
+    cout << setw(15) << setfill(' ') << "\n\n- Beverage?" << setw(28) << right << setfill(' ') << beverage;
+    cout << setw(15) << setfill(' ') << "\n\n- Current Weight?" << setw(20) << setprecision(5) << right << setfill(' ') << weight << " Pounds";
 
-    //Getting ready to store data elsewhere
+    //Getting ready to store data elsewhere, also linking the file stream variable with the output source
     outData.open("report.txt");
 
     //STORING DATA IN SEPARATE FILE
     outData << "<< QUESTION >>                     << ANSWER >>";
-    cout << setfill(' ');
-    cout << left;
-    cout << setw(15) << setfill(' ') << "\n\n- Workout Period?" << setw(21) << right << setfill(' ') << workoutLength << " Hours";
-    cout << setw(15) << setfill(' ') << "\n\n- Focal Point?" << setw(27) << right << setfill(' ') << "The " << bodyPart;
-    cout << setw(15) << setfill(' ') << "\n\n- Beverage?" << setw(27) << right << setfill(' ') << beverage;
-    cout << setw(15) << setfill(' ') << setprecision(1) << "\n\n- Current Weighht?" << setw(20) << right << setfill(' ') << weight << " Pounds";
+    outData << setfill(' ');
+    outData << left;
+    outData << setw(15) << setfill(' ') << "\n\n- Workout Period?" << setw(21) << right << setfill(' ') << workoutLength << " Hours";
+    outData << setw(15) << setfill(' ') << "\n\n- Focal Point?" << setw(27) << right << setfill(' ') << "The " << bodyPart;
+    outData << setw(15) << setfill(' ') << "\n\n- Beverage?" << setw(28) << right << setfill(' ') << beverage;
+    outData << setw(15) << setfill(' ') << "\n\n- Current Weight?" << setw(20) << setprecision(5) << right << setfill(' ') << weight << " Pounds";
 
     //Close file when done
     outData.close();
