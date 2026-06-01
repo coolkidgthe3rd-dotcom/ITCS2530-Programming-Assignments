@@ -71,7 +71,7 @@ int main()
     cout << "\n\n**********************************************************\n\n";
 
     //My short & simple introduction
-    cout << "Welcome! What is your first and last name?\n\n";
+    cout << "Welcome!! What is your first and last name?\n\n";
 
     //To account for the space
     cin >> firstName;
