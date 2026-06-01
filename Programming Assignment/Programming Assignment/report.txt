@@ -1,9 +1,9 @@
 << QUESTION >>                     << ANSWER >>
 
-- Workout Period?                    0 Hours
+- Workout Period?                    3 Hours
 
-- Focal Point?                       The 8  
+- Focal Point?                       The Arms  
 
-- Beverage?                           j
+- Beverage?                       Water
 
-- Current Weight?              1234.5 Pounds
+- Current Weight?               134.7 Pounds
