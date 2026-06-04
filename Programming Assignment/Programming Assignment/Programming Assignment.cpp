@@ -9,6 +9,8 @@ using namespace std;
 #include <string>
 #include <iomanip>
 #include <fstream>
+#define NDEBUG //comment this out if you want to be able to use the assert function
+#include <cassert>
 
 //The main function here
 int main()
