@@ -392,8 +392,7 @@ int main()
     //Stars because why not
     cout << "\n\n**********************************************************\n\n";
 
-    //Goodbye
-    cout << "Goodbye, I wish you luck on your journey!";
+
 
     /* Not entirely sure what this does just yet to be honest, but I do know that we need it
     * as of right now, and the book says it will explain its full use in a later chapter.
