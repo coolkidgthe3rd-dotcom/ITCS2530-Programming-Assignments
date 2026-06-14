@@ -73,7 +73,7 @@ int main()
     //Stars because why not
     cout << "\n\n**********************************************************\n\n";
 
-    cout << "Type in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
     cin >> um;
 
     //To deal with input stream if it enters the fail state
@@ -181,7 +181,7 @@ int main()
     //Stars because why not
     cout << "**********************************************************\n\n";
 
-    cout << "Type in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
     cin >> um;
 
     //To deal with input stream if it enters the fail state
@@ -233,7 +233,7 @@ int main()
     //Stars because why not
     cout << "\n\n**********************************************************\n\n";
 
-    cout << "Type in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
     cin >> um;
 
     //To deal with input stream if it enters the fail state
@@ -264,7 +264,7 @@ int main()
     //Stars because why not
     cout << "\n\n**********************************************************\n\n";
 
-    cout << "Type in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
     cin >> um;
 
     //To deal with input stream if it enters the fail state
@@ -296,7 +296,7 @@ int main()
     //Stars because why not
     cout << "\n\n**********************************************************\n\n";
 
-    cout << "Type in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
     cin >> um;
 
     //To deal with input stream if it enters the fail state
@@ -339,7 +339,7 @@ int main()
     //Stars because why not
     cout << "\n\n**********************************************************\n\n";
 
-    cout << "Type in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
     cin >> um;
 
     //To deal with input stream if it enters the fail state
@@ -357,7 +357,7 @@ int main()
     //Stars because why not
     cout << "\n\n**********************************************************\n\n";
 
-    cout << "Type in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
     cin >> um;
 
     //To deal with input stream if it enters the fail state
@@ -442,7 +442,7 @@ int main()
     */
     do
     {
-        cout << "Type in a number from 1 to 3.\n\n";
+        cout << "Type in a number from 1 to 3.\n";
         cin >> option;
     } 
     while (option != 1 && option != 2 && option != 3);
