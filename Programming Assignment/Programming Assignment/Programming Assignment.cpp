@@ -29,8 +29,8 @@ int main()
     int option;
     string singleName;
 
-    //Weird variable I made up for a "press to continue feature"
-    char um;
+    //Weird variable I made up for a "press >key< to continue feature"
+    string um;
 
     //Friendly intro banner
     cout << setfill(' ');
@@ -70,16 +70,24 @@ int main()
         << setw(5) << "##"
         << setw(4) << "#" << setw(3) << "#" << endl;
 
-
     //Stars because why not
     cout << "\n\n**********************************************************\n\n";
+
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cin >> um;
+
+    //To deal with input stream if it enters the fail state
+    cin.clear();
+    cin.ignore(100, '\n');
+
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
     //Start of program, asks if player has a last name.
     cout << "Welcome!! Before we begin, we need a name. Do you have a last name? (Yes or No)\n\n";
     cin >> singleName;
 
     //Accounting for variations of 'yes' (if player does have a last name)
-    if (singleName == "yes" || singleName == "Yes" || singleName == "YES")
+    if (singleName == "yes" || singleName == "Yes" || singleName == "YES" || singleName == "Y" || singleName == "y")
     {
         cout << "\nOkay, please enter your first and last names here:\n\n";
         //To account for the space
@@ -88,7 +96,7 @@ int main()
         cin >> lastName;
     }
     //Accounting for variations of 'no' (if player does NOT have a last name)
-    else if (singleName == "no" || singleName == "No" || singleName == "NO")
+    else if (singleName == "no" || singleName == "No" || singleName == "NO" || singleName == "N" || singleName == "n")
     {
         cout << "\nOkay, please enter your name here:\n\n";
         cin >> firstName;
@@ -100,14 +108,11 @@ int main()
         return 0;
     }
 
-    //Stars because why not
-    cout << "\n**********************************************************\n\n";
-
-
+    cout << "\n";
 
     //My short & simple introduction
     //Accounting for variations of 'yes' (if player does have a last name)
-    if (singleName == "yes" || singleName == "Yes" || singleName == "YES")
+    if (singleName == "yes" || singleName == "Yes" || singleName == "YES" || singleName == "Y" || singleName == "y")
     {
         //If player shares the same FIRST name as me
         if (firstName == "Gary" || firstName == "gary")
@@ -154,7 +159,7 @@ int main()
         }
     }
     //Accounting for variations of 'no' (if player does NOT have a last name)
-    else if (singleName == "no" || singleName == "No" || singleName == "NO")
+    else if (singleName == "no" || singleName == "No" || singleName == "NO" || singleName == "N" || singleName == "n")
     {
         //If player shares the same first name as me
         if (firstName == "Gary" || firstName == "gary")
@@ -173,11 +178,16 @@ int main()
     }
 
 
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cin >> um;
+
+    //To deal with input stream if it enters the fail state
+    cin.clear();
+    cin.ignore(100, '\n');
+
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
 
-
-    //Stars because why not
-    cout << "**********************************************************\n\n";
 
     //Display 1st Question
     cout << "Question 1/4:\n\n";
@@ -191,18 +201,40 @@ int main()
     cin.clear();
     cin.ignore(100, '\n');
 
+    /* I'll be honest, I don't see a scenario YET where I would NEED a while loop,
+    * but I wanted to use it in order to demonstrate that I know how it works,
+    * even though it is not actually necessary to use here like at all lol
+    */
+
+    while (workoutLength <= 0)
+    {
+        cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+        cout << "\nWhat? A workout of " << workoutLength << " hours?? Yeah right. \n\nYou're not fooling me bud. Come on, give me the REAL number!\n\n";
+
+        //Answer to question one (again)
+        cout << "Type in your response here and press the 'Enter' key to submit your response:\n\n";
+        cin >> workoutLength;
+
+        //To deal with input stream if it enters the fail state
+        cin.clear();
+        cin.ignore(100, '\n');
+    }
     //Possible responses to the answer
-    if (workoutLength < 0)
-        cout << "\nWhat? A workout of " << workoutLength << " hours?? How is that possible??\n\nAnyways... moving on...";
-    else if (workoutLength == 0 || workoutLength == 1)
+    if (workoutLength == 0 || workoutLength == 1)
         cout << "\nAh, a workout of " << workoutLength << " hours is pretty nice, always great to start off small!";
-    else if (workoutLength <= 2)
+    else
         cout << "\nA workout of " << workoutLength << " hours is good! For me, my sessions are still rather short, only really being two hours maximum as\n"
         << "of right now. But that is primarily because I'm still new to this, but I'm aiming to go higher!";
 
 
-    //Stars because why not
-    cout << "\n\n**********************************************************\n\n";
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cin >> um;
+
+    //To deal with input stream if it enters the fail state
+    cin.clear();
+    cin.ignore(100, '\n');
+
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
 
 
@@ -225,8 +257,14 @@ int main()
         << "my arms have been built like noodles, and so one day I just simply got tired of it, and wanted to make a change.\n"
         << "But I eventually decided I should be workouting out more than simply just my arms.";
 
-    //Stars because why not
-    cout << "\n\n**********************************************************\n\n";
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cin >> um;
+
+    //To deal with input stream if it enters the fail state
+    cin.clear();
+    cin.ignore(100, '\n');
+
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
 
 
@@ -248,8 +286,14 @@ int main()
     cout << "\nAh, " << beverage << " is a classic one. I've always just stuck to water, it's simple, it's usually always the"
         << "\nleast costly option, you usually can bring it with you, it's healthy, and it always tastes good!";
 
-    //Stars because why not
-    cout << "\n\n**********************************************************\n\n";
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cin >> um;
+
+    //To deal with input stream if it enters the fail state
+    cin.clear();
+    cin.ignore(100, '\n');
+
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
 
 
@@ -282,25 +326,29 @@ int main()
         cout << "\nOkay, there's some work to be done here, but that's okay!\n"
         << "If you put your mind to it, there's no goal that cannot be reached!";
 
-    //Stars because why not
-    cout << "\n\n**********************************************************\n\n";
-
-
-
-
-
-    //Calculation for weight loss
-    cout << "Analysis: If your current weight is " << weight << " lbs, then by the end of the month,\n"
-        << "you should hopefully weigh anywhere around " << weight - 8 << "-" << weight - 4 << "lbs!"
-        << "\n\nEnter in any character to continue...\n\n";
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
     cin >> um;
 
     //To deal with input stream if it enters the fail state
     cin.clear();
     cin.ignore(100, '\n');
 
-    //Stars because why not
-    cout << "\n\n**********************************************************\n\n";
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+
+
+
+    //Calculation for weight loss
+    cout << "Analysis: If your current weight is " << weight << " lbs, then by the end of the month,\n"
+        << "you should hopefully weigh anywhere around " << weight - 8 << "-" << weight - 4 << "lbs!";
+
+    cout << "\nType in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cin >> um;
+
+    //To deal with input stream if it enters the fail state
+    cin.clear();
+    cin.ignore(100, '\n');
+
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
 
 
@@ -313,10 +361,26 @@ int main()
     cout << "<< QUESTION >>                     << ANSWER >>";
     cout << setfill(' ');
     cout << left;
-    cout << setw(15) << setfill(' ') << "\n\n- Workout Period?" << setw(21) << right << setfill(' ') << workoutLength << " Hours";
-    cout << setw(15) << setfill(' ') << "\n\n- Focal Point?" << setw(27) << right << setfill(' ') << "The " << bodyPart;
-    cout << setw(15) << setfill(' ') << "\n\n- Beverage?" << setw(28) << right << setfill(' ') << beverage;
-    cout << setw(15) << setfill(' ') << "\n\n- Current Weight?" << setw(20) << setprecision(5) << right << setfill(' ') << weight << " Pounds";
+
+    /* I'll be honest, I don't see a scenario YET where I would NEED a for loop,
+    * but I wanted to use it in order to demonstrate that I know how it works,
+    * even though it is not actually necessary to use here like at all lol
+    */
+    int question;
+
+    //For loop
+    //if question isnt 1, 2, or 3, then display the "current weight" question and answer
+    for (question = 1; question <= 4; question++)
+    {
+        if (question == 1)
+            cout << setw(15) << setfill(' ') << "\n\n- Workout Period?" << setw(21) << right << setfill(' ') << workoutLength << " Hours";
+        else if (question == 2)
+            cout << setw(15) << setfill(' ') << "\n\n- Focal Point?" << setw(27) << right << setfill(' ') << "The " << bodyPart;
+        else if (question == 3)
+            cout << setw(15) << setfill(' ') << "\n\n- Beverage?" << setw(28) << right << setfill(' ') << beverage;
+        else 
+            cout << setw(15) << setfill(' ') << "\n\n- Current Weight?" << setw(20) << setprecision(5) << right << setfill(' ') << weight << " Pounds";
+    }
 
     //Getting ready to store data elsewhere, also linking the file stream variable with the output source
     outData.open("report.txt");
