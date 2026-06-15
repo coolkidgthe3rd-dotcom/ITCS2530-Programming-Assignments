@@ -35,6 +35,9 @@ int main()
     //Friendly intro banner
     cout << setfill(' ');
 
+    //The numbers in 'setw' were from me running the program again and again to make the hashtags align
+    //nicely so the message looked neat
+
     //First row
     cout << setw(2) << "#" << setw(3) << "#"
         << setw(6) << "####"
@@ -73,11 +76,13 @@ int main()
     //Stars because why not
     cout << "\n\n**********************************************************\n\n";
 
-    cout << "Type in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    cout << "Hello! \nIn order to continue, you must type in any character (excluding space), and then press 'Enter' to continue...\n\n";
     cin >> um;
 
     //To deal with input stream if it enters the fail state
     cin.clear();
+    //The '100' is here because I figured it would be a big enough number since I doubted anyone
+    //would type a response that long for such simple questions
     cin.ignore(100, '\n');
 
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
@@ -92,6 +97,7 @@ int main()
         cout << "\nOkay, please enter your first and last names here:\n\n";
         //To account for the space
         cin >> firstName;
+        //The '1' here is obviously here to ignore the space between the first and last name
         cin.ignore(1);
         cin >> lastName;
     }
@@ -186,6 +192,8 @@ int main()
 
     //To deal with input stream if it enters the fail state
     cin.clear();
+    //The '100' is here because I figured it would be a big enough number since I doubted anyone
+    //would type a response that long for such simple questions
     cin.ignore(100, '\n');
 
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
@@ -202,6 +210,8 @@ int main()
 
     //To deal with input stream if it enters the fail state
     cin.clear();
+    //The '100' is here because I figured it would be a big enough number since I doubted anyone
+    //would type a response that long for such simple questions
     cin.ignore(100, '\n');
 
     /* I'll be honest, I don't see a scenario YET where I would NEED a while loop,
@@ -220,10 +230,12 @@ int main()
 
         //To deal with input stream if it enters the fail state
         cin.clear();
+        //The '100' is here because I figured it would be a big enough number since I doubted anyone
+        //would type a response that long for such simple questions
         cin.ignore(100, '\n');
     }
     //Possible responses to the answer
-    if (workoutLength == 0 || workoutLength == 1)
+    if (workoutLength < 3)
         cout << "\nAh, a workout of " << workoutLength << " hours is pretty nice, always great to start off small!";
     else
         cout << "\nA workout of " << workoutLength << " hours is good! For me, my sessions are still rather short, only really being two hours maximum as\n"
@@ -238,6 +250,8 @@ int main()
 
     //To deal with input stream if it enters the fail state
     cin.clear();
+    //The '100' is here because I figured it would be a big enough number since I doubted anyone
+    //would type a response that long for such simple questions
     cin.ignore(100, '\n');
 
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
@@ -254,6 +268,8 @@ int main()
 
     //To deal with input stream if it enters the fail state
     cin.clear();
+    //The '100' is here because I figured it would be a big enough number since I doubted anyone
+    //would type a response that long for such simple questions
     cin.ignore(100, '\n');
 
     //Response to the answer
@@ -269,6 +285,8 @@ int main()
 
     //To deal with input stream if it enters the fail state
     cin.clear();
+    //The '100' is here because I figured it would be a big enough number since I doubted anyone
+    //would type a response that long for such simple questions
     cin.ignore(100, '\n');
 
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
@@ -287,6 +305,8 @@ int main()
 
     //To deal with input stream if it enters the fail state
     cin.clear();
+    //The '100' is here because I figured it would be a big enough number since I doubted anyone
+    //would type a response that long for such simple questions
     cin.ignore(100, '\n');
 
     //Response to the answer
@@ -301,6 +321,8 @@ int main()
 
     //To deal with input stream if it enters the fail state
     cin.clear();
+    //The '100' is here because I figured it would be a big enough number since I doubted anyone
+    //would type a response that long for such simple questions
     cin.ignore(100, '\n');
 
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
@@ -320,9 +342,13 @@ int main()
 
     //To deal with input stream if it enters the fail state
     cin.clear();
+    //The '100' is here because I figured it would be a big enough number since I doubted anyone
+    //would type a response that long for such simple questions
     cin.ignore(100, '\n');
 
     //Possible responses to the answer
+    //These numbers were chosen as I felt like they were reasonable if the user in question was wishing
+    //to achieve the build of the average person who works out
     if (weight <= 60)
         cout << "\nWhat? You have a weight of " << weight << " pounds?? How is that possible? Do you even exist?\n\nAnyways... moving on...";
     else if (weight > 60 && weight <= 130)
@@ -344,6 +370,8 @@ int main()
 
     //To deal with input stream if it enters the fail state
     cin.clear();
+    //The '100' is here because I figured it would be a big enough number since I doubted anyone
+    //would type a response that long for such simple questions
     cin.ignore(100, '\n');
 
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
@@ -351,6 +379,8 @@ int main()
 
 
     //Calculation for weight loss
+    //Honestly, I just looked up "how much weight does someone typically lose after working out for a month"
+    //and took the numbers 4 and 8 from there since I didnt know off the top of my head
     cout << "Analysis: If your current weight is " << weight << " lbs, then by the end of the month,\n"
         << "you should hopefully weigh anywhere around " << weight - 8 << "-" << weight - 4 << "lbs!";
 
@@ -362,6 +392,8 @@ int main()
 
     //To deal with input stream if it enters the fail state
     cin.clear();
+    //The '100' is here because I figured it would be a big enough number since I doubted anyone
+    //would type a response that long for such simple questions
     cin.ignore(100, '\n');
 
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
@@ -388,6 +420,7 @@ int main()
     //if question isnt 1, 2, or 3, then display the "current weight" question and answer
     for (question = 1; question <= 4; question++)
     {
+        //same 'setw' explanation as the one at the top
         if (question == 1)
             cout << setw(15) << setfill(' ') << "\n\n- Workout Period?" << setw(21) << right << setfill(' ') << workoutLength << " Hours";
         else if (question == 2)
@@ -402,6 +435,7 @@ int main()
     outData.open("report.txt");
 
     //STORING DATA IN SEPARATE FILE
+    //same 'setw' explanation as the one at the top
     outData << "<< QUESTION >>                     << ANSWER >>";
     outData << setfill(' ');
     outData << left;
@@ -483,7 +517,7 @@ int main()
     cout << "\n\n**********************************************************\n\n";
 
     //Goodbye
-    cout << "Goodbye, I wish you luck on your journey!";
+    cout << "Goodbye, I wish you luck on your journey!\n\n";
 
     /* Not entirely sure what this does just yet to be honest, but I do know that we need it
     * as of right now, and the book says it will explain its full use in a later chapter.
