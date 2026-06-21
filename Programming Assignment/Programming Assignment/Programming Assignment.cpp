@@ -129,6 +129,7 @@ int main()
     /* Not entirely sure what this does just yet to be honest, but I do know that we need it
     * as of right now, and the book says it will explain its full use in a later chapter.
     */
+    colorRed();
     return 0;
 }
 
@@ -549,7 +550,7 @@ void weightCalculation(int weight)
 
     colorRed();
     cout << "Analysis: If your current weight is " << weight << " lbs, then by the end of the month,\n"
-        << "you should hopefully weigh anywhere around " << min << "-" << max << "lbs!";
+        << "you should hopefully weigh anywhere around " << min << "-" << max << " lbs!";
 }
 
 void saveReport(int workoutLength, string bodyPart, string beverage, double weight)
