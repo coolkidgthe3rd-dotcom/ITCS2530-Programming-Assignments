@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4.2.2
+      uses: actions/checkout@v4.3.0
 
     - name: Compile C++ Code
       run: g++ -Wall -std=c++17 "Programming Assignment.cpp" -o my_assignment
