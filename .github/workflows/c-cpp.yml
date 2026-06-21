@@ -16,4 +16,5 @@ jobs:
       uses: actions/checkout@v4.2.2
 
     - name: Compile C++ Code
-      run: g++ -Wall -std=c++17 c-cpp.yml -o my_assignment
+      run: g++ -Wall -std=c++17 "Programming Assignment.cpp" -o my_assignment
+      working-directory: "./Programming Assignment/Programming Assignment"
