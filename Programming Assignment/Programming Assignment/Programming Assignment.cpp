@@ -173,6 +173,7 @@ void displayBanner()
         << setw(4) << "#" << setw(3) << "#" << endl;
 }
 
+//the one and only reference parameter
 void nextPart(string& um)
 {
     //Weird variable I made up for a "press >key< to continue feature"
@@ -325,7 +326,7 @@ void colorGreen()
 //Change color to yellow
 void colorYellow()
 {
-    cout << "\033[33m";
+    cout << "\033[93m";
 }
 
 //Change color to blue
