@@ -1,9 +1,16 @@
+
+Workout Schedule:
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
 << QUESTION >>                     << ANSWER >>
 
-- Workout Period?                           3 Hours
+- Workout Period?                           2 Hours
 
-- Focal Point?                        The arms  
+- Focal Point?                        The stomache  
 
-- Beverage?                       water
+- Beverage?                    gatorade
 
-- Current Weight?                         150 Pounds
+- Current Weight?                         180 Pounds

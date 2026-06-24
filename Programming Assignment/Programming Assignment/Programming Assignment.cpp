@@ -1,16 +1,20 @@
 // Programming Assignment.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 //Using the std namespace here so I didn't have to type out the prefix everytime.
-using namespace std;
-
-//Headers being used so specific functions can be used
 #include <iostream>
 #include <cmath>
 #include <string>
 #include <iomanip>
 #include <fstream>
-#define NDEBUG //comment this out if you want to be able to use the assert function
 #include <cassert>
+using namespace std;
+
+enum SkillLevel
+{
+    BEGINNER,
+    INTERMEDIATE,
+    ADVANCED
+};
 
 //Prototype functions
 //hellooooooooooo
@@ -48,16 +52,16 @@ int main()
     string um;
 
     //Friendly intro banner
-    cout << setfill(' ');
+    std::cout << setfill(' ');
 
     displayBanner();
 
     //Stars because why not
-    cout << "\n\n**********************************************************\n\n";
+    std::cout << "\n\n**********************************************************\n\n";
 
     colorMagenta();
 
-    cout << "Hello! \n\nIn order to continue, you must type in any character (excluding space), and then press 'Enter' to continue...\n\n";
+    std::cout << "Hello! \n\nIn order to continue, you must type in any character (excluding space), and then press 'Enter' to continue...\n\n";
     colorCyan();
     cin >> um;
 
@@ -67,7 +71,7 @@ int main()
     //would type a response that long for such simple questions
     cin.ignore(100, '\n');
 
-    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
     //Asks player names
     introduction();
@@ -112,12 +116,12 @@ int main()
 
     //Words of advice
     colorMagenta();
-    cout << "\These are all great traits to have for working out!\n";
+    std::cout << "\These are all great traits to have for working out!\n";
     colorRed();
-    cout << "\nAnd please keep in mind to not get discouraged from seeing other people's progress,";
-    cout << "\neverybody's bodies are different, while some may simply have more time or experience. But whatever";
-    cout << "\nit is, you should never sell yourself short because somebody else is at where you want to be right now,";
-    cout << "\nbecause with enough time, patience, hard work, and dedication, that could be you too.";
+   std:: cout << "\nAnd please keep in mind to not get discouraged from seeing other people's progress,";
+    std::cout << "\neverybody's bodies are different, while some may simply have more time or experience. But whatever";
+   std:: cout << "\nit is, you should never sell yourself short because somebody else is at where you want to be right now,";
+    std::cout << "\nbecause with enough time, patience, hard work, and dedication, that could be you too.";
 
 
     //Show the menu
@@ -125,7 +129,7 @@ int main()
 
     //Goodbye
     colorGreen();
-    cout << "Goodbye, I wish you luck on your journey!\n\n";
+    std::cout << "Goodbye, I wish you luck on your journey!\n\n";
 
     /* Not entirely sure what this does just yet to be honest, but I do know that we need it
     * as of right now, and the book says it will explain its full use in a later chapter.
@@ -139,34 +143,34 @@ void displayBanner()
     //The numbers in 'setw' were from me running the program again and again to make the hashtags align
     //nicely so the message looked neat
     //First row
-    cout << setw(2) << "#" << setw(3) << "#"
+   std:: cout << setw(2) << "#" << setw(3) << "#"
         << setw(6) << "####"
         << setw(3) << "#"
         << setw(6) << "#"
         << setw(8) << "##"
         << setw(4) << "#" << setw(3) << "#" << endl;
     //Second row
-    cout << setw(2) << "#" << setw(3) << "#"
+   std::cout << setw(2) << "#" << setw(3) << "#"
         << setw(3) << "#"
         << setw(6) << "#"
         << setw(6) << "#"
         << setw(6) << "#" << setw(3) << "#"
         << setw(3) << "#" << setw(3) << "#" << endl;
     //Third row
-    cout << setw(5) << "####"
+    std::cout << setw(5) << "####"
         << setw(6) << "####"
         << setw(3) << "#"
         << setw(6) << "#"
         << setw(6) << "#" << setw(3) << "#"
         << setw(3) << "#" << setw(3) << "#" << endl;
     //Fourth row
-    cout << setw(2) << "#" << setw(3) << "#"
+    std::cout << setw(2) << "#" << setw(3) << "#"
         << setw(3) << "#"
         << setw(6) << "#"
         << setw(6) << "#"
         << setw(6) << "#" << setw(3) << "#" << endl;
     //Fifth row
-    cout << setw(2) << "#" << setw(3) << "#"
+    std::cout << setw(2) << "#" << setw(3) << "#"
         << setw(6) << "####"
         << setw(6) << "####"
         << setw(6) << "####"
@@ -183,11 +187,11 @@ void nextPart(string& um)
     colorWhite();
 
     //Stars because why not
-    cout << "\n\n**********************************************************\n\n";
+    std::cout << "\n\n**********************************************************\n\n";
 
     colorMagenta();
 
-    cout << "Type in any character (excluding space), and then press 'Enter' to continue...\n\n";
+   std:: cout << "Type in any character (excluding space), and then press 'Enter' to continue...\n\n";
     colorCyan();
     cin >> um;
 
@@ -197,7 +201,7 @@ void nextPart(string& um)
     //would type a response that long for such simple questions
     cin.ignore(100, '\n');
 
-    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 }
 
 int introduction()
@@ -209,7 +213,7 @@ int introduction()
     colorGreen();
 
     //Start of program, asks if player has a last name.
-    cout << "Welcome!! Before we begin, we need a name. Do you have a last name? (Yes or No)\n\n";
+    std::cout << "Welcome!! Before we begin, we need a name. Do you have a last name? (Yes or No)\n\n";
     colorCyan();
     cin >> singleName;
 
@@ -218,7 +222,7 @@ int introduction()
     //Accounting for variations of 'yes' (if player does have a last name)
     if (singleName == "yes" || singleName == "Yes" || singleName == "YES" || singleName == "Y" || singleName == "y")
     {
-        cout << "\nOkay, please enter your first and last names here:\n\n";
+       std:: cout << "\nOkay, please enter your first and last names here:\n\n";
         colorCyan();
         //To account for the space
         cin >> firstName;
@@ -229,7 +233,7 @@ int introduction()
     //Accounting for variations of 'no' (if player does NOT have a last name)
     else if (singleName == "no" || singleName == "No" || singleName == "NO" || singleName == "N" || singleName == "n")
     {
-        cout << "\nOkay, please enter your name here:\n\n";
+       std:: cout << "\nOkay, please enter your name here:\n\n";
         colorCyan();
         cin >> firstName;
     }
@@ -237,12 +241,12 @@ int introduction()
     else
     {
         colorRed();
-        cout << "\nError: Invalid response. Terminating program.\n\n";
+        std::cout << "\nError: Invalid response. Terminating program.\n\n";
         return 0;
     }
 
     colorGreen();
-    cout << "\n";
+   std:: cout << "\n";
 
     //My short & simple introduction
     //Accounting for variations of 'yes' (if player does have a last name)
@@ -254,24 +258,24 @@ int introduction()
             //If player does NOT share the same FIRST and LAST name as me
             if (lastName != "Gantt" && lastName != "gantt")
             {
-                cout << "Woah! Your first name is also " << firstName << "? That's so cool!\n\n";
+            std:: cout << "Woah! Your first name is also " << firstName << "? That's so cool!\n\n";
 
-                cout << "Anyways, moving on, my hobby is strength training & fitness development!\n";
-                cout << "I would like to ask you four simple questions related to my hobby.";
+               std:: cout << "Anyways, moving on, my hobby is strength training & fitness development!\n";
+               std:: cout << "I would like to ask you four simple questions related to my hobby.";
             }
 
             //If player shares BOTH the same first name AND last name as me
             else if (lastName == "Gantt" || lastName == "gantt")
             {
-                cout << "Woah this is insane!\n";
-                cout << "Your first AND last name is ALSO " << firstName << " " << lastName << "??\n";
-                cout << "What are the chances?!\n\n";
-                cout << "Wait... are you sure you aren't just a secret clone of me...?\n\n";
+                std::cout << "Woah this is insane!\n";
+               std:: cout << "Your first AND last name is ALSO " << firstName << " " << lastName << "??\n";
+                std::cout << "What are the chances?!\n\n";
+                std::cout << "Wait... are you sure you aren't just a secret clone of me...?\n\n";
 
-                cout << "Anyways, moving on me, our hobby is strength training & fitness development!\n";
-                cout << "I would like to ask you (or myself?) four simple questions related to our hobby.\n\n";
+                std::cout << "Anyways, moving on me, our hobby is strength training & fitness development!\n";
+                std::cout << "I would like to ask you (or myself?) four simple questions related to our hobby.\n\n";
 
-                cout << "(God that is so weird, I'm not doing that anymore...)";
+                std::cout << "(God that is so weird, I'm not doing that anymore...)";
             }
         }
         //If player shares the same LAST name as me but NOT the first name
@@ -279,17 +283,17 @@ int introduction()
         {
             if (firstName != "Gary" && firstName != "gary")
             {
-                cout << "Woah! Your last name is also " << lastName << "? That's so cool!\n\n";
+                std::cout << "Woah! Your last name is also " << lastName << "? That's so cool!\n\n";
 
-                cout << "Anyways, moving on, my hobby is strength training & fitness development!\n";
-                cout << "I would like to ask you four simple questions related to my hobby.";
+               std:: cout << "Anyways, moving on, my hobby is strength training & fitness development!\n";
+                std::cout << "I would like to ask you four simple questions related to my hobby.";
             }
         }
         //If player does not share either the first or last name with me
         else
         {
-            cout << "Hello " << firstName << " " << lastName << ", my name is Gary and my hobby is strength training & fitness development!\n";
-            cout << "I would like to ask you four simple questions related to my hobby.";
+            std::cout << "Hello " << firstName << " " << lastName << ", my name is Gary and my hobby is strength training & fitness development!\n";
+            std::cout << "I would like to ask you four simple questions related to my hobby.";
         }
     }
     //Accounting for variations of 'no' (if player does NOT have a last name)
@@ -298,16 +302,16 @@ int introduction()
         //If player shares the same first name as me
         if (firstName == "Gary" || firstName == "gary")
         {
-            cout << "Woah! Your name is also " << firstName << "? That's so cool!\n\n";
+           std:: cout << "Woah! Your name is also " << firstName << "? That's so cool!\n\n";
 
-            cout << "Anyways, moving on, my hobby is strength training & fitness development!\n";
-            cout << "I would like to ask you four simple questions related to my hobby.";
+            std::cout << "Anyways, moving on, my hobby is strength training & fitness development!\n";
+            std::cout << "I would like to ask you four simple questions related to my hobby.";
         }
         //If player does not share the same first name as me
         else
         {
-            cout << "Hello " << firstName << ", my name is Gary and my hobby is strength training & fitness development!\n";
-            cout << "I would like to ask you four simple questions related to my hobby.";
+            std::cout << "Hello " << firstName << ", my name is Gary and my hobby is strength training & fitness development!\n";
+            std::cout << "I would like to ask you four simple questions related to my hobby.";
         }
     }
 }
@@ -315,43 +319,43 @@ int introduction()
 //Change color to red
 void colorRed()
 {
-    cout << "\033[91m";
+    std::cout << "\033[91m";
 }
 
 //Change color to green
 void colorGreen()
 {
-    cout << "\033[92m";
+    std::cout << "\033[92m";
 }
 
 //Change color to yellow
 void colorYellow()
 {
-    cout << "\033[93m";
+    std::cout << "\033[93m";
 }
 
 //Change color to blue
 void colorBlue()
 {
-    cout << "\033[94m";
+    std::cout << "\033[94m";
 }
 
 //Change color to magenta
 void colorMagenta()
 {
-    cout << "\033[95m";
+    std::cout << "\033[95m";
 }
 
 //Change color to cyan
 void colorCyan()
 {
-    cout << "\033[96m";
+    std::cout << "\033[96m";
 }
 
 //Change color to white
 void colorWhite()
 {
-    cout << "\033[37m";
+    std::cout << "\033[37m";
 }
 
 
@@ -366,13 +370,13 @@ int questionOne()
     int answer;
     //Display 1st Question
     colorYellow();
-    cout << "Question 1/4:\n\n";
+    std::cout << "Question 1/4:\n\n";
     colorBlue();
-    cout << "Around how many hours do you typically workout per week? (Numerical answer only please)\n\n";
+    std::cout << "Around how many hours do you typically workout per week? (Numerical answer only please)\n\n";
 
     //Answer to question one
     colorWhite();
-    cout << "Type in your response here and press the 'Enter' key to submit your response:\n\n";
+    std::cout << "Type in your response here and press the 'Enter' key to submit your response:\n\n";
     colorCyan();
     cin >> answer;
 
@@ -390,12 +394,12 @@ int questionOne()
     while (answer <= 0)
     {
         colorRed();
-        cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-        cout << "\nWhat? A workout of " << answer << " hours?? Yeah right. \n\nYou're not fooling me bud. Come on, give me the REAL number!\n\n";
+       std:: cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+       std:: cout << "\nWhat? A workout of " << answer << " hours?? Yeah right. \n\nYou're not fooling me bud. Come on, give me the REAL number!\n\n";
 
         //Answer to question one (again)
         colorWhite();
-        cout << "Type in your response here and press the 'Enter' key to submit your response:\n\n";
+        std::cout << "Type in your response here and press the 'Enter' key to submit your response:\n\n";
         colorCyan();
         cin >> answer;
 
@@ -411,9 +415,9 @@ int questionOne()
 
     //Possible responses to the answer
     if (answer < 3)
-        cout << "\nAh, a workout of " << answer << " hours is pretty nice, always great to start off small!";
+        std::cout << "\nAh, a workout of " << answer << " hours is pretty nice, always great to start off small!";
     else
-        cout << "\nA workout of " << answer << " hours is good! For me, my sessions are still rather short, only really being two hours maximum as\n"
+        std::cout << "\nA workout of " << answer << " hours is good! For me, my sessions are still rather short, only really being two hours maximum as\n"
         << "of right now. But that is primarily because I'm still new to this, but I'm aiming to go higher!";
 
     return answer;
@@ -430,13 +434,13 @@ string questionTwo()
     string answer;
     //Display 2nd Question
     colorYellow();
-    cout << "Question 2/4:\n\n";
+   std:: cout << "Question 2/4:\n\n";
     colorBlue();
-    cout << "What is the main part of your body you would like to see improvement in?\n\n";
+    std::cout << "What is the main part of your body you would like to see improvement in?\n\n";
 
     //Answer to question two
     colorWhite();
-    cout << "Type in your response here and press the 'Enter' key to submit your response:\n\n";
+    std::cout << "Type in your response here and press the 'Enter' key to submit your response:\n\n";
     colorCyan();
     cin >> answer;
 
@@ -448,7 +452,7 @@ string questionTwo()
 
     colorGreen();
     //Response to the answer
-    cout << "\nOh, the " << answer << " is a great place to start! Me personally, I decided to work on my arms. For almost the entirety of my life,\n"
+    std::cout << "\nOh, the " << answer << " is a great place to start! Me personally, I decided to work on my arms. For almost the entirety of my life,\n"
         << "my arms have been built like noodles, and so one day I just simply got tired of it, and wanted to make a change.\n"
         << "But I eventually decided I should be workouting out more than simply just my arms.";    
 
@@ -468,13 +472,13 @@ string questionThree()
 
     //Display 3rd Question
     colorYellow();
-    cout << "Question 3/4:\n\n";
+    std::cout << "Question 3/4:\n\n";
     colorBlue();
-    cout << "What drinks do you like to consume while you workout?\n\n";
+   std:: cout << "What drinks do you like to consume while you workout?\n\n";
 
     //Answer to question three
     colorWhite();
-    cout << "Type in your response here and press the 'Enter' key to submit your response:\n\n";
+    std::cout << "Type in your response here and press the 'Enter' key to submit your response:\n\n";
     colorCyan();
     cin >> answer;
 
@@ -488,7 +492,7 @@ string questionThree()
     colorGreen();
 
     //Response to the answer
-    cout << "\nAh, " << answer << " is a classic one. I've always just stuck to water, it's simple, it's usually always the"
+    std::cout << "\nAh, " << answer << " is a classic one. I've always just stuck to water, it's simple, it's usually always the"
         << "\nleast costly option, you usually can bring it with you, it's healthy, and it always tastes good!";
 
     return answer;
@@ -506,13 +510,13 @@ int questionFour()
 
     //Display 4th Question
     colorYellow();
-    cout << "Question 4/4:\n\n";
+    std::cout << "Question 4/4:\n\n";
     colorBlue();
-    cout << "How much do you currently weigh? (Up to a single decimal is allowed)\n\n";
+    std::cout << "How much do you currently weigh? (Up to a single decimal is allowed)\n\n";
 
     //Answer to question three
     colorWhite();
-    cout << "Type in your response here and press the 'Enter' key to submit your response:\n\n";
+    std::cout << "Type in your response here and press the 'Enter' key to submit your response:\n\n";
     colorCyan();
     cin >> answer;
 
@@ -527,16 +531,16 @@ int questionFour()
     //to achieve the build of the average person who works out
     colorGreen();
     if (answer <= 60)
-        cout << "\nWhat? You have a weight of " << answer << " pounds?? How is that possible? Do you even exist?\n\nAnyways... moving on...";
+       std:: cout << "\nWhat? You have a weight of " << answer << " pounds?? How is that possible? Do you even exist?\n\nAnyways... moving on...";
     else if (answer > 60 && answer <= 130)
-        cout << "\nOnly a weight of " << answer << " pounds? You must be pretty slim, so don't worry about burning fat too much!";
+       std:: cout << "\nOnly a weight of " << answer << " pounds? You must be pretty slim, so don't worry about burning fat too much!";
     else if (answer > 130 && answer <= 210)
-        cout << "\nYou already have a weight of " << answer << " pounds? You're already in pretty great shape, kudos to you!";
+       std:: cout << "\nYou already have a weight of " << answer << " pounds? You're already in pretty great shape, kudos to you!";
     else if (answer > 210 && answer <= 290)
-        cout << "\nNice, " << answer << " pounds isn't a bad place to start off.\n"
+       std:: cout << "\nNice, " << answer << " pounds isn't a bad place to start off.\n"
         << "I wish you luck on your journey to whatever weight it is that you desire!";
     else
-        cout << "\nOkay, there's some work to be done here, but that's okay!\n"
+       std:: cout << "\nOkay, there's some work to be done here, but that's okay!\n"
         << "If you put your mind to it, there's no goal that cannot be reached!";
 
     return answer;
@@ -551,25 +555,69 @@ void weightCalculation(int weight)
     //and took the numbers 4 and 8 from there since I didnt know off the top of my head
 
     colorRed();
-    cout << "Analysis: If your current weight is " << weight << " lbs, then by the end of the month,\n"
+    std::cout << "Analysis: If your current weight is " << weight << " lbs, then by the end of the month,\n"
         << "you should hopefully weigh anywhere around " << min << "-" << max << " lbs!";
+
+    SkillLevel level;
+
+    if (weight < 150)
+    {
+        level = BEGINNER;
+    }
+    else if (weight < 220)
+    {
+        level = INTERMEDIATE;
+    }
+    else
+    {
+        level = ADVANCED;
+    }
+
+    switch (level)
+    {
+    case BEGINNER:
+        std::cout << "\nSkill Level: Beginner";
+        break;
+
+    case INTERMEDIATE:
+        std::cout << "\nSkill Level: Intermediate";
+        break;
+
+    case ADVANCED:
+        std::cout << "\nSkill Level: Advanced";
+        break;
+    }
 }
 
 void saveReport(int workoutLength, string bodyPart, string beverage, double weight)
 {
+    string workoutDays[5] =
+    {
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+    };
     ofstream outData;
 
     colorYellow();
 
     //New summary for answers
-    cout << "Anyways, here is what I have gathered from our discussion:\n\n";
+   std:: cout << "Anyways, here is what I have gathered from our discussion:\n\n";
 
     colorGreen();
+   std:: cout << "\nWorkout Schedule:\n";
+
+    for (int i = 0; i < 5; i++)
+    {
+       std:: cout << workoutDays[i] << endl;
+    }
 
     //Fancy table
-    cout << "<< QUESTION >>                     << ANSWER >>";
-    cout << setfill(' ');
-    cout << left;
+    std::cout << "<< QUESTION >>                     << ANSWER >>";
+    std::cout << setfill(' ');
+    std::cout << left;
 
     /* I'll be honest, I don't see a scenario YET where I would NEED a for loop,
     * but I wanted to use it in order to demonstrate that I know how it works,
@@ -594,6 +642,12 @@ void saveReport(int workoutLength, string bodyPart, string beverage, double weig
 
     //Getting ready to store data elsewhere, also linking the file stream variable with the output source
     outData.open("report.txt");
+    outData << "\nWorkout Schedule:\n";
+
+    for (int i = 0; i < 5; i++)
+    {
+        outData << workoutDays[i] << endl;
+    }
 
     //STORING DATA IN SEPARATE FILE
     //same 'setw' explanation as the one at the top
