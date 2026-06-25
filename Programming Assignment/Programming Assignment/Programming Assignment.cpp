@@ -18,6 +18,7 @@ enum SkillLevel
 
 //Prototype functions
 //hellooooooooooo
+//test for new visual studio
 void displayBanner();
 void colorRed();
 void colorGreen();
