@@ -15,7 +15,15 @@ enum SkillLevel
     INTERMEDIATE,
     ADVANCED
 };
+struct WorkoutSession
+{
+	int workoutLength;
+	string bodyPart;
+	string beverage;
+	double weight;
+};
 
+void printWorkoutSession(WorkoutSession session);
 //Prototype functions
 //hellooooooooooo
 //test for new visual studio
@@ -48,6 +56,7 @@ int main()
     string bodyPart;
     string beverage;
     double weight;
+	WorkoutSession session;
 
     //Weird variable I made up for a "press >key< to continue feature"
     string um;
@@ -100,6 +109,13 @@ int main()
 
     //Ask the fourth question
     weight = questionFour();
+
+	session.workoutLength = workoutLength;
+	session.bodyPart = bodyPart;
+	session.beverage = beverage;
+	session.weight = weight;
+
+	printWorkoutSession(session);
 
     //Just to add some extra polish :)
     nextPart(um);
@@ -730,4 +746,15 @@ int displayMenu()
     colorWhite();
     //Stars because why not
     cout << "\n\n**********************************************************\n\n";
+}
+void printWorkoutSession(WorkoutSession session)
+{
+    colorYellow();
+    cout << "\n\nWorkout Session Summary\n\n";
+
+    colorGreen();
+    cout << left << setw(20) << "Workout Hours:" << session.workoutLength << endl;
+    cout << left << setw(20) << "Body Part:" << session.bodyPart << endl;
+    cout << left << setw(20) << "Beverage:" << session.beverage << endl;
+    cout << left << setw(20) << "Weight:" << session.weight << endl;
 }
